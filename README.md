@@ -1,2 +1,2 @@
 # TriplexAligner
-A method for sequence based prediction of RNA-DNA triplices.
+An R package for sequence based prediction of RNA:DNA:DNA triple helix formation.
