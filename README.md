@@ -7,13 +7,15 @@ The *TriplexAligner* R package works using the `TriplexAligner()` command of the
 
 ## Parameters
 There are several required and optional parameters for the `TriplexAligner()` function, detailed below:
-- `rna_input` Input RNA. See `rna_format` for format options.
-- `dna_input` Input DNA. See `dna_format` for format options.
-- `rna_format` One of `"symbol"` or `"fasta"`. 
-- `dna_format` One of `"symbol"`, `"fasta"` or `"bed"`.
-- `species` Either `"human"`/`"hs"` or `"mouse"`/`"mm"`.
-- `up` Number of base pairs upstream of supplied DNA region which is considered (`dna_format` must be one of `"symbol"` or `"bed"` for this to apply). Default 0.
-- `down` Number of base pairs downstream of supplied DNA region which is considered (`dna_format` must be one of `"symbol"` or `"bed"` for this to apply). Default 0.
+| Parameter | Description | Default |
+| :---------| :---------- | :-------|
+| `rna_input` | Input RNA. See `rna_format` for format options. | None |
+| `dna_input` | Input DNA. See `dna_format` for format options. | None |
+| `rna_format` | One of `"symbol"` or `"fasta"`. | None | 
+| `dna_format` | One of `"symbol"`, `"fasta"` or `"bed"`. | None |
+| `species` | Either `"human"`/`"hs"` or `"mouse"`/`"mm"`. | None |
+| `up` | Number of base pairs upstream of supplied DNA region which is considered (`dna_format` must be one of `"symbol"` or `"bed"` for this to apply). | 0 |
+| `down` | Number of base pairs downstream of supplied DNA region which is considered (`dna_format` must be one of `"symbol"` or `"bed"` for this to apply). | 0 |
 
 ## Examples
 ```
