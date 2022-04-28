@@ -1,9 +1,9 @@
 # TriplexAligner ----------------------------------------------------------
 
 #' Predicts RNA:DNA:DNA triple helix formation between RNAs and DNA regions of interest
-#' 
+#'
 #' This function implements RNA:DNA:DNA triple helix mapping codes learned by expectation-maximisation from triplex-sequencing data as substitution matrices in local alignment to predict sites of RNA-DNA interaction.
-#' @param rna_input Input RNA. See `rna_format` for options. 
+#' @param rna_input Input RNA. See `rna_format` for options.
 #' @param dna_input Input DNA. See `dna_format` for options.
 #' @param rna_format One of "symbol" or "fasta".
 #' @param dna_format One of "symbol", "fasta" or "bed".
@@ -14,7 +14,7 @@
 #' @param down How many base pairs downstream of TSS to consider as promoter region. Default: 500.
 #' @keywords align triplex rna dna
 #' @export
-#' @examples 
+#' @examples
 #' # Predict triplex formation between MALAT1 and the promoter of GAPDH
 #' TriplexAligner(rna_input = 'MALAT1', dna_input = 'GAPDH', rna_format = 'symbol', dna_format = 'symbol', species = 'hs')
 #' # Predict triplex formation between MALAT1 and DNA regions in a bed file (e.g. ATAC-sequencing peaks)
@@ -41,7 +41,7 @@ TriplexAligner = function(rna_input, dna_input, rna_format, dna_format, code_lis
   } else {
     stop('Please specify dna_format as one of "symbol", "fasta" or "bed"')
   }
+  # Run TriplexAligner
   triplex_aln = align_all_tx(rna = rna, dna = dna, code_list = code_list, ka_list = ka_list, species = species)
-  #aln_bind = rbindlist(aln_list)
   return(triplex_aln)
 }

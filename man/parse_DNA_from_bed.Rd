@@ -20,7 +20,7 @@ Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve 
 }
 \examples{
 # return DNA sequences of regions in bed file
-parse_proms_from_symbols(bed = foo.bed, species = "human") 
+parse_proms_from_symbols(bed = foo.bed, species = "human")
 # return DNA sequences of regions in bed file exctended by 500 base pairs in each direction
 parse_proms_from_symbols(bed = foo.bed, species = "human", up = 500, down = 500)
 }

@@ -13,8 +13,8 @@ parse_DNA_from_fasta(fasta)
 Uses \code{Biostrings} to parse DNA sequences from the supplied fasta file.
 }
 \examples{
-# return a DNAstringset object containing sequences contained within foo.fa 
-parse_DNA_from_fasta(fasta = foo.fa) 
+# return a DNAstringset object containing sequences contained within foo.fa
+parse_DNA_from_fasta(fasta = foo.fa)
 }
 \keyword{fasta}
 \keyword{gene}

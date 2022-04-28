@@ -16,9 +16,9 @@ Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve 
 }
 \examples{
 # return all human NEAT1 transcript sequences
-parse_tx_from_symbol(symbol = "NEAT1", species = "human") 
+parse_tx_from_symbol(symbol = "NEAT1", species = "human")
 # return all mouse NEAT1 transcript sequences
-parse_tx_from_symbol(symbol = "Neat1", species = "mouse") 
+parse_tx_from_symbol(symbol = "Neat1", species = "mouse")
 }
 \keyword{gene}
 \keyword{sequence}

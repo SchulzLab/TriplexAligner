@@ -20,7 +20,7 @@ Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve 
 }
 \examples{
 # return promoter sequences (2500 bp upstream and 500 bp downstream of TSS) of several human genes
-parse_proms_from_symbols(symbols = c("GAPDH","CDH5","NANOG","NOXO1"), species = "human", up = 2500, down = 500) 
+parse_proms_from_symbols(symbols = c("GAPDH","CDH5","NANOG","NOXO1"), species = "human", up = 2500, down = 500)
 # return promoter sequences (1000 bp upstream and 1000 bp downstream of TSS) of several mouse genes
 parse_proms_from_symbols(symbols = c("Gapdh","Cdh5","Nanog","Noxo1"), species = "mouse", up = 1000, down = 1000)
 }

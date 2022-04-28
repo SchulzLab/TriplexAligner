@@ -1,7 +1,7 @@
 # align_all_tx ------------------------------------------------------------
 
 #' Returns alignments between an RNA sequence and all supplied DNA sequences
-#' 
+#'
 #' This function aligns two sequences using a substitution matrix learned by exprectation-maximisation from triplex-sequencing data, and returns a `data.frame` with results including Karlin-Altschul statistics.
 #' @param rna RNA sequences of transcripts of interest along with metadata. List.
 #' @param dna DNA sequences of interest along with metadata. List.
@@ -10,6 +10,7 @@
 #' @param species "human"/"hs" or "mouse"/"mm".
 #' @keywords align triplex rna dna
 #' @export
+#' @import data.table
 
 align_all_tx = function(rna, dna, code_list, ka_list, species){
   require(data.table, quietly = T)

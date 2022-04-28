@@ -1,7 +1,7 @@
 # Parse DNA regions from bed file ---------------------------------
 
 #' Returns DNA sequences as a DNAstringset for supplied genomic regions
-#' 
+#'
 #' Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve promoter sequences of the supplied genes, flanked by a user-defined number of base pairs.
 #' @param bed_file character vector of gene symbols e.g. c("GAPDH", "MALAT1") for human or c("Gapdh", "Malat1") for mouse.
 #' @param species either "human" or "hs" for human, or "mouse" or "mm" for mouse.
@@ -9,9 +9,10 @@
 #' @param down numeric, how many base pairs downstream of the transcription start site to consider. Default 0.
 #' @keywords promoter sequence symbol gene
 #' @export
-#' @examples 
+#' @import GenomicRanges data.table
+#' @examples
 #' # return DNA sequences of regions in bed file
-#' parse_proms_from_symbols(bed = foo.bed, species = "human") 
+#' parse_proms_from_symbols(bed = foo.bed, species = "human")
 #' # return DNA sequences of regions in bed file exctended by 500 base pairs in each direction
 #' parse_proms_from_symbols(bed = foo.bed, species = "human", up = 500, down = 500)
 

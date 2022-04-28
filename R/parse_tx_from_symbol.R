@@ -1,17 +1,18 @@
 # parse_tx_from_symbol --------------------------------------------
 
 #' Returns transcript sequence as a DNAstring from supplied gene symbol
-#' 
+#'
 #' Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve transcript sequences of the supplied gene.
 #' @param symbol Gene symbol e.g. "GAPDH", "MALAT1" for human or "Gapdh", "Malat1" for mouse.
 #' @param species either "human" or "hs" for human, or "mouse" or "mm" for mouse.
 #' @keywords transcript sequence symbol gene
 #' @export
-#' @examples 
+#' @import AnnotationDbi
+#' @examples
 #' # return all human NEAT1 transcript sequences
-#' parse_tx_from_symbol(symbol = "NEAT1", species = "human") 
+#' parse_tx_from_symbol(symbol = "NEAT1", species = "human")
 #' # return all mouse NEAT1 transcript sequences
-#' parse_tx_from_symbol(symbol = "Neat1", species = "mouse") 
+#' parse_tx_from_symbol(symbol = "Neat1", species = "mouse")
 
 parse_tx_from_symbol = function(symbol, species){
   orgdb = get_org(species = species)
