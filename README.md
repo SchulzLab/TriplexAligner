@@ -73,27 +73,27 @@ This parameter extends the region supplied by either the `symbol` or `bed` DNA f
 |76      |98    |AAA... |2041     |2063   |AAA... |71.25  |40.28    |18.64       |-1.27 |Code 7 |CD40     |foo      |
 |589     |672   |UCU... |1740     |1823   |TGT... |52.93  |31.18    |10297.54    |-4.01 |Code 8 |CD40     |foo      |
 
-### `TxStart`
+#### `TxStart`
 The position relative to the start of the transcript where the predicted RNA:DNA:DNA triplex begins.
-### `TxEnd`
+#### `TxEnd`
 The position relative to the start of the transcript where the predicted RNA:DNA:DNA triplex ends.
-### `TxSeq`
+#### `TxSeq`
 The RNA sequence of the predicted RNA:DNA:DNA triplex.
-### `DNAStart`
+#### `DNAStart`
 The position relative to the start of the input DNA where the predicted RNA:DNA:DNA triplex begins.
-### `DNAEnd`
+#### `DNAEnd`
 The position relative to the start of the input DNA where the predicted RNA:DNA:DNA triplex ends.
-### `Score`
+#### `Score`
 The raw local alignment score as computed by *TriplexAligner*.
-### `BitScore`
+#### `BitScore`
 The bit score (S) of the local alignment returned by S = (λ × S − lnK)/ ln2, using Karlin-Altschul parameters computed for the specific substitution matrix.
-### `EValue`
+#### `EValue`
 The *E* value of the local alignment, taking into account the lengths of the input RNA and DNA, as well as species-appropriate database size.
-### `logE`
+#### `logE`
 -log10(*E* value)
-### `Code`
+#### `Code`
 The substitution matrix implemented in the local alignment.
-### `DNA_name`
+#### `DNA_name`
 The name of the DNA sequence/region provided by the user. This will either be the supplied gene symbol (when `dna_format = "symbol"`), the fasta header for the entry (when `dna_format = "fasta"`) or the name of the bed interval as supplied in the fourth column of a bed file (when `dna_format = "bed"`).
-### `RNA_name`
+#### `RNA_name`
 The name of the RNA sequence/transcript provided by the user. This will either be the supplied gene symbol followed by the annotated Entrez transcript ID (when `rna_format = "symbol"`) or the fasta header for the entry (when `rna_format = "fasta"`).
