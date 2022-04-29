@@ -19,14 +19,14 @@ parse_tx_from_symbol = function(symbol, species){
   txdb = get_txdb(species = species)
   bs = get_bs(species = species)
   entrez = suppressMessages(AnnotationDbi::select(x = orgdb, keys = symbol, columns = 'ENTREZID', keytype = 'SYMBOL'))
-  allTx = exonsBy(txdb, by = 'tx')
+  allTx = GenomicFeatures::exonsBy(txdb, by = 'tx')
   tx = suppressMessages(AnnotationDbi::select(x = txdb, keys = entrez$ENTREZID, columns = 'TXID', keytype = 'GENEID'))
   tx$SYMBOL = entrez$SYMBOL[match(tx$GENEID, entrez$ENTREZID)]
   tx$NAME = paste0(tx$SYMBOL, tx$TXID)
   txRanges = allTx[names(allTx) %in% tx$TXID]
   tx_meta = as.data.frame(txRanges)
   tx_meta$symbol = tx$SYMBOL[match(tx_meta$group_name, tx$TXID)]
-  transcriptFastas = extractTranscriptSeqs(x = bs, transcripts = txRanges)
+  transcriptFastas = GenomicFeatures::extractTranscriptSeqs(x = bs, transcripts = txRanges)
   names(transcriptFastas) = tx$NAME[match(names(transcriptFastas), tx$TXID)]
   return(list(sequences = transcriptFastas, meta = tx_meta))
 }

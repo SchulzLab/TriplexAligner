@@ -13,12 +13,11 @@
 #' @import data.table
 
 align_tx_against_dna = function(rna_seq, dna, code_list, ka_list, species){
-  require(data.table, quietly = T)
   dna_aln_list = lapply(1:length(dna$sequences), function(dna_index){
     dna_aln = align_per_code(rna_seq = rna_seq, dna_seq = dna$sequences[[dna_index]], code_list = code_list, ka_list = ka_list, species = species)
     dna_aln$DNA_name = dna$meta$Symbol[dna_index]
     return(dna_aln)
   })
-  dna_aln_bind = rbindlist(dna_aln_list)
+  dna_aln_bind = data.table::rbindlist(dna_aln_list)
   return(dna_aln_bind)
 }

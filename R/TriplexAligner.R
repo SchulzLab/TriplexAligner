@@ -15,12 +15,14 @@
 #' @keywords align triplex rna dna
 #' @export
 #' @examples
+#' \dontrun{
 #' # Predict triplex formation between MALAT1 and the promoter of GAPDH
 #' TriplexAligner(rna_input = 'MALAT1', dna_input = 'GAPDH', rna_format = 'symbol', dna_format = 'symbol', species = 'hs')
 #' # Predict triplex formation between MALAT1 and DNA regions in a bed file (e.g. ATAC-sequencing peaks)
 #' TriplexAligner(rna_input = 'MALAT1', dna_input = 'foo.bed', rna_format = 'symbol', dna_format = 'bed', species = 'hs')
 #' # Predict triplex formation between MALAT1 & NEAT1 and DNA regions in a fasta file
 #' TriplexAligner(rna_input = c('MALAT1', 'NEAT1'), dna_input = 'foo.fa', rna_format = 'symbol', dna_format = 'bed', species = 'hs')
+#' }
 
 TriplexAligner = function(rna_input, dna_input, rna_format, dna_format, code_list = get_codes(), ka_list = get_ka_params(), species, up = 2500, down = 500){
   # Parse RNA sequences from input

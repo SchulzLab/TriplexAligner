@@ -11,27 +11,27 @@
 #' @export
 #' @import GenomicRanges data.table
 #' @examples
+#' \dontrun{
 #' # return DNA sequences of regions in bed file
 #' parse_proms_from_symbols(bed = foo.bed, species = "human")
 #' # return DNA sequences of regions in bed file exctended by 500 base pairs in each direction
 #' parse_proms_from_symbols(bed = foo.bed, species = "human", up = 500, down = 500)
+#' }
 
 
 parse_DNA_from_bed = function(bed_file, species, up = 0, down = 0){
-  require(GenomicRanges, quietly = T)
-  require(data.table, quietly = T)
   # databases
   orgdb = get_org(species = species)
   txdb = get_txdb(species = species)
   bs = get_bs(species = species)
   # ranges and sequences
   restrict = c(paste0('chr', 1:22), 'chrX', 'chrY', 'chrM')
-  bed = fread(file = bed_file, sep = '\t')
+  bed = data.table::fread(file = bed_file, sep = '\t')
   bed = bed[bed$V1 %in% restrict,]
   bed$V2 = bed$V2 - up
   bed$V3 = bed$V3 + down
-  ranges = GRanges(seqnames = bed$V1, ranges = IRanges(start = bed$V2, end = bed$V3, names = bed$V4))
-  range_seqs = getSeq(bs, ranges)
+  ranges = GenomicRanges::GRanges(seqnames = bed$V1, ranges = IRanges::IRanges(start = bed$V2, end = bed$V3, names = bed$V4))
+  range_seqs = Biostrings::getSeq(bs, ranges)
   meta = as.data.frame(ranges)
   meta$name = rownames(meta)
   return(list(sequences = range_seqs, meta = meta))

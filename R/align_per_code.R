@@ -13,12 +13,11 @@
 #' @import data.table
 
 align_per_code = function(rna_seq, dna_seq, code_list, ka_list, species){
-  require(data.table, quietly = T)
   align_list = lapply(1:length(code_list), function(code_index){
     aln = align(rna_seq = rna_seq, dna_seq = dna_seq, code = code_list[[code_index]], ka = ka_list[[code_index]], species = species)
     aln$Code = paste0('Code ', code_index)
     return(aln)
   })
-  align_bind = rbindlist(align_list)
+  align_bind = data.table::rbindlist(align_list)
   return(align_bind)
 }

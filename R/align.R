@@ -13,7 +13,6 @@
 #' @import Biostrings
 
 align = function(rna_seq, dna_seq, code, ka, species) {
-  require(Biostrings, quietly = T)
   aln = Biostrings::pairwiseAlignment(pattern = dna_seq, subject = rna_seq, type = "local", substitutionMatrix = code, gapOpening = Inf, gapExtension = Inf)
   score = aln@score
   bit_score = bit_score(score = score, lambda = ka$Lambda, k = ka$K)

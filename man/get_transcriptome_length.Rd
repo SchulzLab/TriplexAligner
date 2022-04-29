@@ -13,10 +13,12 @@ get_transcriptome_length(species)
 This function will return the total length of either the human or mouse transcriptome, as annotated by the UCSC TxDB packages.
 }
 \examples{
+\dontrun{
 # Get length of annotated human transcriptome
 get_transcriptome_length(species = "human")
 # Get length of annotated mouse transcriptome
 get_transcriptome_length(species = "mouse")
+}
 }
 \keyword{length}
 \keyword{transcriptome}

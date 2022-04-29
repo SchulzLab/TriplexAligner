@@ -15,11 +15,9 @@
 
 get_txdb = function(species){
   if(species == "human" | species == "hs"){
-    suppressMessages(require(TxDb.Hsapiens.UCSC.hg38.knownGene))
-    txdb = TxDb.Hsapiens.UCSC.hg38.knownGene
+    txdb = TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene
   } else if(species == "mouse" | species == "mm"){
-    suppressMessages(require(TxDb.Mmusculus.UCSC.mm10.knownGene))
-    txdb = TxDb.Mmusculus.UCSC.mm10.knownGene
+    txdb = TxDb.Mmusculus.UCSC.mm10.knownGene::TxDb.Mmusculus.UCSC.mm10.knownGene
   } else {
     stop('Please specify either "human" or "hs" for human, or "mouse" or "mm" for mouse.')
   }

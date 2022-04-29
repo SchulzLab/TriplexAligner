@@ -15,11 +15,9 @@
 
 get_bs = function(species){
   if(species == "human" | species == "hs"){
-    suppressMessages(require(BSgenome.Hsapiens.UCSC.hg38))
-    bsGenome = BSgenome.Hsapiens.UCSC.hg38
+    bsGenome = BSgenome.Hsapiens.UCSC.hg38::BSgenome.Hsapiens.UCSC.hg38
   } else if(species == "mouse" | species == "mm"){
-    suppressMessages(require(BSgenome.Mmusculus.UCSC.mm10))
-    bsGenome = BSgenome.Mmusculus.UCSC.mm10
+    bsGenome = BSgenome.Mmusculus.UCSC.mm10::BSgenome.Mmusculus.UCSC.mm10
   } else {
     stop('Please specify either "human" or "hs" for human, or "mouse" or "mm" for mouse.')
   }

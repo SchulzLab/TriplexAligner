@@ -39,12 +39,14 @@ TriplexAligner(
 This function implements RNA:DNA:DNA triple helix mapping codes learned by expectation-maximisation from triplex-sequencing data as substitution matrices in local alignment to predict sites of RNA-DNA interaction.
 }
 \examples{
+\dontrun{
 # Predict triplex formation between MALAT1 and the promoter of GAPDH
 TriplexAligner(rna_input = 'MALAT1', dna_input = 'GAPDH', rna_format = 'symbol', dna_format = 'symbol', species = 'hs')
 # Predict triplex formation between MALAT1 and DNA regions in a bed file (e.g. ATAC-sequencing peaks)
 TriplexAligner(rna_input = 'MALAT1', dna_input = 'foo.bed', rna_format = 'symbol', dna_format = 'bed', species = 'hs')
 # Predict triplex formation between MALAT1 & NEAT1 and DNA regions in a fasta file
 TriplexAligner(rna_input = c('MALAT1', 'NEAT1'), dna_input = 'foo.fa', rna_format = 'symbol', dna_format = 'bed', species = 'hs')
+}
 }
 \keyword{align}
 \keyword{dna}

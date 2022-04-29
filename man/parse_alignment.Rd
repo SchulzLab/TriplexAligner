@@ -13,7 +13,9 @@ parse_alignment(alignment)
 This function parses the output of \code{align} to a \code{data.frame} which contains key results.
 }
 \examples{
+\dontrun{
 parse_alignment(alignment)
+}
 }
 \keyword{align}
 \keyword{data.frame}

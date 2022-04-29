@@ -7,13 +7,15 @@
 #' @keywords transcriptome length
 #' @export
 #' @examples
+#' \dontrun{
 #' # Get length of annotated human transcriptome
 #' get_transcriptome_length(species = "human")
 #' # Get length of annotated mouse transcriptome
 #' get_transcriptome_length(species = "mouse")
+#' }
 
 get_transcriptome_length = function(species){
   txdb = get_txdb(species = species)
-  totalLength = sum(width(unlist(transcriptsBy(x = txdb, by = 'gene'))))
+  totalLength = sum(width(unlist(GenomicFeatures::transcriptsBy(x = txdb, by = 'gene'))))
   return(totalLength)
 }

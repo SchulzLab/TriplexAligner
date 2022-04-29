@@ -19,10 +19,12 @@ parse_DNA_from_bed(bed_file, species, up = 0, down = 0)
 Uses TxDb, org.db and BSgenome objects from the species of interest to retrieve promoter sequences of the supplied genes, flanked by a user-defined number of base pairs.
 }
 \examples{
+\dontrun{
 # return DNA sequences of regions in bed file
 parse_proms_from_symbols(bed = foo.bed, species = "human")
 # return DNA sequences of regions in bed file exctended by 500 base pairs in each direction
 parse_proms_from_symbols(bed = foo.bed, species = "human", up = 500, down = 500)
+}
 }
 \keyword{gene}
 \keyword{promoter}

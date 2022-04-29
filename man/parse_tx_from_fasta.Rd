@@ -13,8 +13,10 @@ parse_tx_from_fasta(fasta)
 Uses \code{Biostrings} to parse transcript sequences from the supplied fasta file.
 }
 \examples{
+\dontrun{
 # return a DNAstringset object containing sequences contained within foo.fa
 parse_tx_from_fasta(fasta = foo.fa)
+}
 }
 \keyword{fasta}
 \keyword{gene}

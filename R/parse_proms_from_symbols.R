@@ -24,11 +24,11 @@ parse_proms_from_symbols = function(symbols, species, up = 2500, down = 500){
   bs = get_bs(species = species)
   # ranges and sequences
   entrez = suppressMessages(AnnotationDbi::select(x = orgdb, keys = symbols, columns = 'ENTREZID', keytype = 'SYMBOL'))
-  allGenes = suppressMessages(genes(txdb))
-  promRanges = promoters(allGenes[names(allGenes) %in% entrez$ENTREZID], upstream = up, downstream = down)
+  allGenes = suppressMessages(GenomicFeatures::genes(txdb))
+  promRanges = GenomicFeatures::promoters(allGenes[names(allGenes) %in% entrez$ENTREZID], upstream = up, downstream = down)
   promMeta = data.frame(promRanges)
   promMeta$Symbol = entrez$SYMBOL[match(promMeta$gene_id, entrez$ENTREZID)]
-  promoterSeqs = getSeq(bs, promRanges)
+  promoterSeqs = Biostrings::getSeq(bs, promRanges)
   names(promoterSeqs) = symbols
   return(list(sequences = promoterSeqs, meta = promMeta))
 }

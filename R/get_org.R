@@ -15,11 +15,9 @@
 
 get_org = function(species){
   if(species == "human" | species == "hs"){
-    suppressMessages(require(org.Hs.eg.db))
-    orgdb = org.Hs.eg.db
+    orgdb = org.Hs.eg.db::org.Hs.eg.db
   } else if(species == "mouse" | species == "mm"){
-    suppressMessages(require(org.Mm.eg.db))
-    orgdb = org.Mm.eg.db
+    orgdb = org.Mm.eg.db::org.Mm.eg.db
   } else {
     stop('Please specify either "human" or "hs" for human, or "mouse" or "mm" for mouse.')
   }
