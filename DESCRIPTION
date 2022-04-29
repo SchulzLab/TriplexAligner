@@ -5,6 +5,7 @@ Authors@R:
     person("Timothy", "Warwick", , "warwick@vrc.uni-frankfurt.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6804-2931"))
 Description: TriplexAligner implements substitution matrices learned by machine learning to predict sites of RNA:DNA:DNA triple helix formation between user-supplied RNA and DNA sequences.
+Imports: AnnotationDbi, BSgenome.Hsapiens.UCSC.hg38, BSgenome.Mmusculus.UCSC.mm10, Biostrings, GenomicRanges, TxDb.Hsapiens.UCSC.hg38.knownGene, TxDb.Mmusculus.UCSC.mm10.knownGene, data.table, org.Hs.eg.db, org.Mm.eg.db
 License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
