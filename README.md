@@ -2,6 +2,13 @@
 -------
 An R package for sequence based prediction of RNA:DNA:DNA triple helix formation.
 
+## Install
+
+Installation of _TriplexAligner_ requires the _devtools_ and _BiocManager_ packages. Once these are installed, _TriplexAligner_ may be installed with the following command:
+```
+devtools::install_github(repo = 'SchulzLab/TriplexAligner', repos = BiocManager::repositories(), dependencies = T)
+```
+
 ## Usage
 The *TriplexAligner* R package works using the `TriplexAligner()` command of the same name. Here, the user can supply input RNA and DNA of various formats (explained below), along with specifying the species of interest. The output of `TriplexAligner()` is a `data.frame` providing local alignment results with accompanying score metrics and Karlin-Altschul statistics.
 
