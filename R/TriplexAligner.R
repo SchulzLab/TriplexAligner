@@ -38,6 +38,8 @@ TriplexAligner = function(rna_input, dna_input, rna_format, dna_format, code_lis
     dna = parse_proms_from_symbols(symbols = dna_input, species = species, up = up, down = down)
   } else if(dna_format == 'fasta'){
     dna = parse_DNA_from_fasta(fasta = dna_input)
+  } else if(dna_format == 'text'){
+    dna = parse_DNA_from_text(fasta = dna_input)
   } else if(dna_format == 'bed'){
     dna = parse_DNA_from_bed(bed_file = dna_input, species = species, up = up, down = down)
   } else {
