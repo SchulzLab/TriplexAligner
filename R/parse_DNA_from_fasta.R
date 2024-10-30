@@ -15,6 +15,6 @@
 
 parse_DNA_from_fasta = function(fasta){
   seqs = Biostrings::readDNAStringSet(fasta, format = 'fasta')
-  dna_meta = data.frame(Name = names(seqs))
+  dna_meta = data.frame(Symbol = names(seqs))
   return(list(sequences = seqs, meta = dna_meta))
 }
